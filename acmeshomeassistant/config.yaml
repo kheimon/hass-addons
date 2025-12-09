@@ -1,0 +1,32 @@
+name: acme.sHomeassistant
+version: 1.4.1
+slug: acmeshomeassistant
+description: Wrapper around acme.sh client to fetch TLS certificates
+arch:
+  - aarch64
+  - amd64
+startup: services
+map:
+  - ssl:rw
+boot: auto
+init: false
+url: https://codeberg.org/hupf/homeassistant-addons/src/branch/main/acmeshomeassistant
+options:
+  accountemail: null
+  domains: []
+  dns: null
+  dnsEnvVariables: []
+  fullchainfile: fullchain.pem
+  keyfile: privkey.pem
+schema:
+  accountemail: str
+  domains:
+    - str
+  dns: str
+  server: str?
+  dnsEnvVariables:
+    - name: str
+      value: str
+  keylength: match(2048|3072|4096|8192|ec-256|ec-384|ec-521)?
+  fullchainfile: str
+  keyfile: str
